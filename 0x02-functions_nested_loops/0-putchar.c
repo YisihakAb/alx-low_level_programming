@@ -1,21 +1,19 @@
 #include "main.h"
 
 /**
- * main -Entry point
+ * main - entry
  *
- * Return:
+ * Return: 0
  */
 int main(void)
 {
-	char yise[] = "_putchar";
-	int c;
+	char word[] = "_putchar";
+	int i;
 
-	for (c = 0; c < 8; c++)
+	for (i = 0; i < 8; i++)
 	{
-		_putchar(yise[c]);
+		_putchar(word[i]);
 	}
 	_putchar('\n');
-
 	return (0);
 }
-
