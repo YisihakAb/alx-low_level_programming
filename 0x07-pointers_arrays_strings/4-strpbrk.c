@@ -5,11 +5,11 @@
  * @s: string to check
  * @accept: string to check against
  *
- * Return: pointer to byte in s that matches of NULL if no match
+ * Return: pointer to byte in s that matches or NULL if no match
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i. j;
+	unsigned int i, j;
 
 	for (i = 0; s[i]; i++)
 	{
@@ -23,3 +23,4 @@ char *_strpbrk(char *s, char *accept)
 	}
 	return (0);
 }
+
