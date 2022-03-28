@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.
 
 /**
  * _strstr - locates a substring
@@ -9,7 +9,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned nt i = 0, j = 0;
+	unsigned int i = 0, j = 0;
 
 	while (haystack[i])
 	{
