@@ -1,70 +1,55 @@
-#include<stdlib.h>
+#include <stdlib.h>
 #include "main.h"
-
 /**
-* ft_strlen - a function
-* @str: the chaine
-*
-* Return: 1 or 0
-*/
-
-int ft_strlen(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
-
-/**
- * string_nconcat - a function ...
- * @s1: the chaine
- * @s2: the chaine
- * @n: the number
- *
- * Return: 1 or 0
+ * _strlen - Length of string
+ * @s : string
+ * Return:int
  */
+unsigned int _strlen(char *s)
+{
+	unsigned int size = 0;
 
+	for (; s[size] != '\0'; size++)
+	;
+	return (size);
+}
+/**
+ * string_nconcat - a function that concatenates two strings
+ * @s1 : string one
+ * @s2 : string two
+ * @n : size of s2 to be printed
+ * Return:character
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int arret, i = 0, j = 0;
-	unsigned int taille1, taille2;
-	char *str;
+	unsigned int j = 0;
+	unsigned int k = 0;
+	char *p;
 
-	taille2 = ft_strlen(s2);
-	taille1 = ft_strlen(s1);
-
-	str  = malloc(sizeof(char) * (taille1 + taille2 + 1));
-
-	if (str == NULL)
-		return (NULL);
-
-	while (s1[i] != '\0')
-	{
-		str[j] = s1[i];
-		i++;
-		j++;
-	}
-
+	if (s1 == NULL)
+		s1 = "";
 	if (s2 == NULL)
+		s2 = "";
+	if (n < _strlen(s2))
 	{
-		return (s1);
+		p = malloc(_strlen(s1) + n + 1);
 	}
-
-	i = 0;
-
-	if (taille2 >= n)
-		arret =  n;
 	else
-		arret = taille2;
-	while (i <= arret)
+		p = malloc(_strlen(s1) + _strlen(s2) + 1);
+	if (p == 0)
+		return (NULL);
+	while (s1[j] != '\0')
 	{
-		str[j] =  s2[i];
-		i++;
+		p[j] = s1[j];
 		j++;
 	}
-	str[j] = '\0';
-	return (str);
+	while (s2[k] != '\0' && n > 0)
+	{
+		p[j] = s2[k];
+		n--;
+		k++;
+		j++;
+	}
+	p[j] = '\0';
+	return (p);
 }
